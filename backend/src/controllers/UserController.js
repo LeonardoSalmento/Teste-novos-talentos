@@ -33,7 +33,7 @@ class UserController {
             let user = await User.findOne({ email });
     
             if (user){
-                return res.status(401).json({ error: 'User already exists' });
+                return res.status(409).json({ error: 'User already exists' });
             }
     
             const passwordHash = await bcrypt.hash(password, 8);
