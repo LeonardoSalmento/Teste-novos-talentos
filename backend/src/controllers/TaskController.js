@@ -72,8 +72,6 @@ class TaskController {
           description,
           finished
         } = req.body;
-
-        console.log(finished)
         
         const user = await User.findById(userId);
         const task = await Task.findById(id);
@@ -97,7 +95,6 @@ class TaskController {
           updated
           }
         );
-        console.log(user)
     
         return res.send(taskUpdated);
       }
@@ -150,7 +147,48 @@ class TaskController {
       } catch (error) {
             return res.status(400).json({error: "Something it's wrong, try again!"})
         }
-    }    
+    }  
+    
+    async changeStatusTask(req, res){
+        try {
+            const { id } = req.params;
+            const userId = req.userId;
+
+            const user = await User.findById(userId);
+            const task = await Task.findById(id);
+            
+            if (!user){
+                return res.status(401).json({error: "User not found!"})
+            }
+            
+            if(!task){
+                return res.status(401).json({error: "Task not found!"})
+            }
+
+            const updated = Date.now();
+
+            let finished = false
+
+
+            if (!task.finished){
+                finished = true
+            }
+        
+            const taskUpdated = await Task.updateOne(
+            { _id: id },
+            {title: task.title,
+            description: task.description,
+            finished: finished,
+            user,
+            updated
+            }
+            );
+        
+            return res.send(taskUpdated);
+        } catch (error) {
+            return res.status(400).json({error: "Something it's wrong, try again!"})
+        }
+    }
 
       
 }

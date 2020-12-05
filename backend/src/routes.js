@@ -21,6 +21,7 @@ routes.get('/tasks',authMiddleware, taskController.index);
 routes.get('/tasks/:id',authMiddleware, taskController.show);
 routes.get('/pendindTasks',authMiddleware, taskController.showPendindTasks);
 routes.get('/completedTasks',authMiddleware, taskController.showCompletedTasks);
+routes.get('/changeStatusTask/:id',authMiddleware, taskController.changeStatusTask);
 routes.put('/tasks/:id',authMiddleware, taskController.update);
 routes.post('/tasks',authMiddleware, taskController.create);
 routes.delete('/tasks/:id',authMiddleware, taskController.delete);
