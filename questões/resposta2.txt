@@ -1,0 +1,18 @@
+2.
+Para melhor entendimento, vou chamar o ponto (3.2,  6.3) de pontoA.
+
+
+Virgínica:
+O pontoA ficaria mais próximo de pontos amarelos(Virgínica), então, utilizando métodos de aproximação, seria mais provável que o pontoA fosse uma Virgínica.
+
+
+Versicolor:
+Poderia ser ser uma versicolor, por já ter algumas espalhadas "aletoriamente" ao redor desse ponto. Mas seria pouco provável.
+
+
+Setosa:
+Nas amostras de setosa, não possui nenhuma com sepal length maior que 6, e as que possuem um length maior que 5, o sepal width é maior que 3.2.
+Ou seja, se por um acaso o pontoA fosse uma Setosa, provavelmente seria considera um outilier, e seria descartado por estar muito longe dos demais/da média.
+
+
+Portanto, é mais provável que seja uma virgínica.
