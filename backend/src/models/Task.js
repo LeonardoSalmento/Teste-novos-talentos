@@ -6,7 +6,6 @@ const TaskSchema = new Schema({
     type: SchemaTypes.ObjectId,
     ref: 'User',
   },
-  description: String,
   finished: Boolean,
   created: Date,
   updated: Date,

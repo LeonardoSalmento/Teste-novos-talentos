@@ -35,7 +35,7 @@ class TaskController {
     async create(req, res){
         try {
             const userId = req.userId;
-            const { title, description } = req.body;
+            const { title} = req.body;
             const finished = false;
             const created = new Date();
             const updated = new Date();
@@ -48,7 +48,6 @@ class TaskController {
 
             const task = await Task.create({
                 title,
-                description,
                 finished,
                 user,
                 created,
@@ -69,7 +68,6 @@ class TaskController {
         const userId = req.userId;
         const {
           title,
-          description,
           finished
         } = req.body;
         
@@ -89,7 +87,6 @@ class TaskController {
         const taskUpdated = await Task.updateOne(
           { _id: id },
           {title,
-          description,
           finished,
           user,
           updated
@@ -177,7 +174,6 @@ class TaskController {
             const taskUpdated = await Task.updateOne(
             { _id: id },
             {title: task.title,
-            description: task.description,
             finished: finished,
             user,
             updated
