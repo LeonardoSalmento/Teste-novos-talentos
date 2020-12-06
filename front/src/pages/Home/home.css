@@ -1,0 +1,16 @@
+.container-home {
+    width:80%;
+    margin:0 auto;
+}
+
+.container-home .container-row {
+    width:80%;
+}
+
+.container-home .container-row .row {
+    min-width: 100% !important;
+}
+
+.container-home .container-row .row .title{
+    min-width: 100%;
+}
